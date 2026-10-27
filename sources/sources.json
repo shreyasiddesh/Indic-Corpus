@@ -1,0 +1,63 @@
+{
+  "_comment": "Declarative source list for download.sh. Licenses are read from each dataset card at download time and written to raw/SOURCES.json; license_allowlist makes the downloader refuse anything we are not allowed to train on. 'candidates' are tried in order until min_total_bytes is reached; every attempt (including failures and license refusals) is logged to raw/DOWNLOAD_LOG.json.",
+  "license_allowlist": [
+    "mit",
+    "apache-2.0",
+    "cc0-1.0",
+    "cc-by-4.0",
+    "cc-by-3.0",
+    "cc-by-sa-4.0",
+    "cc-by-sa-3.0",
+    "odc-by",
+    "cdla-permissive-2.0",
+    "gfdl"
+  ],
+  "sources": [
+    {
+      "name": "wikipedia_hi",
+      "role": "hindi_devanagari",
+      "hf_dataset": "wikimedia/wikipedia",
+      "include_prefix": "20231101.hi/",
+      "max_files": 1,
+      "text_field": "text",
+      "notes": "Hindi Wikipedia, cleaned articles (parquet). Dataset card lists CC-BY-SA-3.0 and GFDL; attribution required.",
+      "sample_fraction": 0.4
+    },
+    {
+      "name": "sangraha_verified_hin",
+      "role": "hindi_devanagari",
+      "hf_dataset": "ai4bharat/sangraha",
+      "include_prefix": "verified/hin/",
+      "max_files": 1,
+      "text_field": "text",
+      "notes": "AI4Bharat Sangraha, human-verified Hindi (web, PDF, speech transcripts).",
+      "sample_fraction": 0.2
+    }
+  ],
+  "hinglish_candidates": [
+    {
+      "name": "hinglish_everyday_conversations",
+      "hf_dataset": "Abhishekcr448/Hinglish-Everyday-Conversations-1M",
+      "max_files": 1,
+      "sample_fraction": 0.03
+    },
+    {
+      "name": "hinglish_conversations",
+      "hf_dataset": "ankitdhiman/hinglish-conversations",
+      "max_files": 1
+    },
+    {
+      "name": "sangraha_synthetic_hin_latn",
+      "hf_dataset": "ai4bharat/sangraha",
+      "include_prefix": "synthetic/hin_Latn/",
+      "max_files": 1,
+      "text_field": "text"
+    },
+    {
+      "name": "english_hinglish_top",
+      "hf_dataset": "rvv-karma/English-Hinglish-TOP",
+      "max_files": 2
+    }
+  ],
+  "hinglish_min_total_bytes": 1500000
+}

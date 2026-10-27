@@ -1,0 +1,394 @@
+{
+ "code_hash": "0131d26836f8",
+ "config": {
+  "boilerplate_doc_ratio": 0.5,
+  "boilerplate_line_max_chars": 120,
+  "contam_near_containment": 0.6,
+  "contam_near_miss_cap": 2000,
+  "contam_near_miss_min": 0.3,
+  "contam_shingle_words": 5,
+  "contam_translit_containment": 0.6,
+  "contam_translit_shingle_words": 4,
+  "dev_min_ratio": 0.5,
+  "eval_candidate_pool": 2000,
+  "eval_hi_latn_share": 0.25,
+  "eval_min_doc_words": {
+   "hi": 40,
+   "hi-Latn": 8
+  },
+  "eval_passage_max_words": 120,
+  "eval_passage_min_words": {
+   "hi": 20,
+   "hi-Latn": 8
+  },
+  "eval_seed": 20261026,
+  "eval_size": 200,
+  "hinglish_min_hits": 2,
+  "hinglish_min_rate": 0.12,
+  "hinglish_vs_english": 0.4,
+  "keep_langs": [
+   "hi",
+   "hi-Latn"
+  ],
+  "max_char_run_ratio": 0.2,
+  "max_digit_ratio": 0.5,
+  "max_invalid_devanagari_ratio": 0.01,
+  "max_markup_tag_ratio": 0.3,
+  "max_question_mark_ratio": 0.25,
+  "max_record_bytes": 67108864,
+  "max_repeated_line_ratio": 0.5,
+  "max_replacement_char_ratio": 0.002,
+  "max_symbol_ratio": 0.1,
+  "max_top_word_ratio": 0.4,
+  "max_urls_per_100_words": 3.0,
+  "min_letters_for_lang": 3,
+  "min_lines_for_line_repetition": 6,
+  "min_unique_word_ratio": 0.15,
+  "min_words": 3,
+  "min_words_for_repetition": 30,
+  "minhash_seed": 1337,
+  "near_dup_min_words": 20,
+  "near_dup_threshold": 0.8,
+  "num_perm": 128,
+  "pair_log_min": 0.55,
+  "rows_per_part": 50000,
+  "sample_fraction": 1.0,
+  "shingle_words": 5,
+  "spam_min_distinct_hits": 3,
+  "table_min_lines": 3,
+  "table_numeric_token_ratio": 0.6,
+  "text_field_override": "",
+  "text_fields": [
+   "text",
+   "content",
+   "body",
+   "sentence",
+   "article",
+   "document",
+   "raw_content",
+   "paragraph",
+   "message",
+   "review",
+   "comment",
+   "story"
+  ],
+  "txt_mode": "line"
+ },
+ "config_digest": "9a7553495912",
+ "contamination": {
+  "by_method": {
+   "exact": 2,
+   "near": 2
+  },
+  "eval_items_affected": 4,
+  "training_docs_removed": 33
+ },
+ "dedup": {
+  "exact_dropped": 1392,
+  "lsh_bands_rows": [
+   14,
+   9
+  ],
+  "near_dropped": 8027
+ },
+ "drop_reasons": {
+  "contamination:eval_leak:exact": 2,
+  "contamination:eval_leak:near": 31,
+  "dedup_exact:exact_duplicate": 1392,
+  "dedup_near:near_duplicate": 8027,
+  "eval_holdout:held_out_for_eval": 200,
+  "filter:boilerplate": 2,
+  "filter:garbled_devanagari": 45,
+  "filter:garbled_replacement_chars": 10,
+  "filter:markup": 3,
+  "filter:markup_or_code": 3,
+  "filter:repeated_lines": 13,
+  "filter:repetitive_words": 9,
+  "filter:spam_keywords": 13,
+  "filter:too_short": 223,
+  "filter:url_heavy": 19,
+  "lang:lang=en": 481,
+  "lang:lang=other": 30,
+  "read:not_sampled": 1160359
+ },
+ "eval": {
+  "by_lang": {
+   "hi": 150,
+   "hi-Latn": 50
+  },
+  "items": 200
+ },
+ "funnel": [
+  {
+   "ALL": 1257633,
+   "after": "input",
+   "en": 484,
+   "hi": 67237,
+   "hi-Latn": 29514,
+   "n/a": 1160360,
+   "other": 38
+  },
+  {
+   "ALL": 97274,
+   "after": "read",
+   "en": 484,
+   "hi": 67237,
+   "hi-Latn": 29514,
+   "n/a": 1,
+   "other": 38
+  },
+  {
+   "ALL": 97274,
+   "after": "normalize",
+   "en": 484,
+   "hi": 67237,
+   "hi-Latn": 29514,
+   "n/a": 1,
+   "other": 38
+  },
+  {
+   "ALL": 96934,
+   "after": "filter",
+   "en": 481,
+   "hi": 66909,
+   "hi-Latn": 29514,
+   "n/a": 0,
+   "other": 30
+  },
+  {
+   "ALL": 96423,
+   "after": "lang",
+   "en": 0,
+   "hi": 66909,
+   "hi-Latn": 29514,
+   "n/a": 0,
+   "other": 0
+  },
+  {
+   "ALL": 95031,
+   "after": "dedup_exact",
+   "en": 0,
+   "hi": 65526,
+   "hi-Latn": 29505,
+   "n/a": 0,
+   "other": 0
+  },
+  {
+   "ALL": 87004,
+   "after": "dedup_near",
+   "en": 0,
+   "hi": 57499,
+   "hi-Latn": 29505,
+   "n/a": 0,
+   "other": 0
+  },
+  {
+   "ALL": 86804,
+   "after": "eval_holdout",
+   "en": 0,
+   "hi": 57349,
+   "hi-Latn": 29455,
+   "n/a": 0,
+   "other": 0
+  },
+  {
+   "ALL": 86771,
+   "after": "contamination",
+   "en": 0,
+   "hi": 57316,
+   "hi-Latn": 29455,
+   "n/a": 0,
+   "other": 0
+  }
+ ],
+ "ignored_files": [
+  "DOWNLOAD_LOG.json",
+  "SOURCES.json",
+  "hinglish_everyday_conversations/DATASET_CARD.md",
+  "sangraha_verified_hin/DATASET_CARD.md",
+  "wikipedia_hi/DATASET_CARD.md"
+ ],
+ "inputs": [
+  {
+   "bytes": 184679475,
+   "compression": null,
+   "format": "csv",
+   "path": "hinglish_everyday_conversations/hinglish_conversations.csv",
+   "records": 1001323,
+   "sha256": "3ec4aa4f23394dc7e6ecef990453641fa85c0f03175ad60f1408e3b3c0c36484",
+   "source": "hinglish_everyday_conversations"
+  },
+  {
+   "bytes": 378091240,
+   "compression": null,
+   "format": "parquet",
+   "path": "sangraha_verified_hin/verified__hin__data-0.parquet",
+   "records": 174763,
+   "sha256": "001c615cca156edb0f99e7bdeabfa33fa6135f85d379b85999d8e071e3475d85",
+   "source": "sangraha_verified_hin"
+  },
+  {
+   "bytes": 134883945,
+   "compression": null,
+   "format": "parquet",
+   "path": "wikipedia_hi/20231101.hi__train-00000-of-00002.parquet",
+   "records": 81547,
+   "sha256": "48001d229cb28d1e74c1f6bac76a1d0ccfc2ffa05c8fb9c2201a5b56108e7c58",
+   "source": "wikipedia_hi"
+  }
+ ],
+ "outputs": {
+  "clean_by_lang": {
+   "hi": 57316,
+   "hi-Latn": 29455
+  },
+  "clean_parts": [
+   {
+    "name": "part-00000.jsonl.gz",
+    "rows": 50000,
+    "sha256": "b91b50eb03f1ee8c518ef6539a1cdfb00123eea5bf900314331371bd26be96f9"
+   },
+   {
+    "name": "part-00001.jsonl.gz",
+    "rows": 36771,
+    "sha256": "e17fee2d38253898732eda882fbe7b16019e2d90603ce6311c3a7b41fe2a0e30"
+   }
+  ],
+  "clean_rows": 86771,
+  "contamination_sha256": "11e5669aea94e8c0fc3a3706f3ec3de0731c58d80a6980e65e6e7bd0663f4f09",
+  "eval_sha256": "77b61c49930c13e521f03b1e098f59c90fcf48b266b09eb16a40412791777ad6",
+  "ledger_rows": 1257633,
+  "ledger_sha256": "48bc4a5c34e226efdb43c90e6f5c5c3bbb375b5378e4a3fcbe36deaee2950e03"
+ },
+ "per_source": {
+  "hinglish_everyday_conversations": {
+   "docs_in": 1001323,
+   "dropped": {
+    "dedup_exact:exact_duplicate": 9,
+    "eval_holdout:held_out_for_eval": 50,
+    "filter:too_short": 1,
+    "lang:lang=en": 220,
+    "read:not_sampled": 971593
+   },
+   "kept": 29450,
+   "kept_chars": 2780462
+  },
+  "sangraha_verified_hin": {
+   "docs_in": 174763,
+   "dropped": {
+    "contamination:eval_leak:exact": 1,
+    "contamination:eval_leak:near": 31,
+    "dedup_exact:exact_duplicate": 550,
+    "dedup_near:near_duplicate": 42,
+    "eval_holdout:held_out_for_eval": 100,
+    "filter:boilerplate": 2,
+    "filter:garbled_devanagari": 26,
+    "filter:garbled_replacement_chars": 10,
+    "filter:repeated_lines": 6,
+    "filter:repetitive_words": 6,
+    "filter:spam_keywords": 9,
+    "lang:lang=en": 9,
+    "lang:lang=other": 4,
+    "read:not_sampled": 139824
+   },
+   "kept": 34143,
+   "kept_chars": 73511741
+  },
+  "wikipedia_hi": {
+   "docs_in": 81547,
+   "dropped": {
+    "contamination:eval_leak:exact": 1,
+    "dedup_exact:exact_duplicate": 833,
+    "dedup_near:near_duplicate": 7985,
+    "eval_holdout:held_out_for_eval": 50,
+    "filter:garbled_devanagari": 19,
+    "filter:markup": 3,
+    "filter:markup_or_code": 3,
+    "filter:repeated_lines": 7,
+    "filter:repetitive_words": 3,
+    "filter:spam_keywords": 4,
+    "filter:too_short": 222,
+    "filter:url_heavy": 19,
+    "lang:lang=en": 252,
+    "lang:lang=other": 26,
+    "read:not_sampled": 48942
+   },
+   "kept": 23178,
+   "kept_chars": 53672574
+  }
+ },
+ "pii_redactions_in_clean": {
+  "EMAIL": 64,
+  "PAN": 2,
+  "PHONE": 266
+ },
+ "pipeline_version": "1.0.0",
+ "python": "3.14.4",
+ "read_skipped_by_reason": {
+  "not_sampled": 1160359
+ },
+ "sources": [
+  {
+   "bytes": 134883945,
+   "downloaded_at": "2026-10-27",
+   "files": [
+    {
+     "bytes": 134883945,
+     "file": "wikipedia_hi\\20231101.hi__train-00000-of-00002.parquet",
+     "origin_path": "20231101.hi/train-00000-of-00002.parquet",
+     "sha256": "48001d229cb28d1e74c1f6bac76a1d0ccfc2ffa05c8fb9c2201a5b56108e7c58"
+    }
+   ],
+   "license": "cc-by-sa-3.0,gfdl",
+   "name": "wikipedia_hi",
+   "notes": "Hindi Wikipedia, cleaned articles (parquet). Dataset card lists CC-BY-SA-3.0 and GFDL; attribution required.",
+   "path": "wikipedia_hi/",
+   "revision": "b04c8d1ceb2f5cd4588862100d08de323dccfbaa",
+   "role": "hindi_devanagari",
+   "sample_fraction": 0.4,
+   "text_field": "text",
+   "url": "https://huggingface.co/datasets/wikimedia/wikipedia"
+  },
+  {
+   "bytes": 378091240,
+   "downloaded_at": "2026-10-27",
+   "files": [
+    {
+     "bytes": 378091240,
+     "file": "sangraha_verified_hin\\verified__hin__data-0.parquet",
+     "origin_path": "verified/hin/data-0.parquet",
+     "sha256": "001c615cca156edb0f99e7bdeabfa33fa6135f85d379b85999d8e071e3475d85"
+    }
+   ],
+   "license": "cc-by-4.0",
+   "name": "sangraha_verified_hin",
+   "notes": "AI4Bharat Sangraha, human-verified Hindi (web, PDF, speech transcripts).",
+   "path": "sangraha_verified_hin/",
+   "revision": "8b813c3f62d37b2fa174d68c31e8b35ae2fe85e8",
+   "role": "hindi_devanagari",
+   "sample_fraction": 0.2,
+   "text_field": "text",
+   "url": "https://huggingface.co/datasets/ai4bharat/sangraha"
+  },
+  {
+   "bytes": 184679475,
+   "downloaded_at": "2026-10-27",
+   "files": [
+    {
+     "bytes": 184679475,
+     "file": "hinglish_everyday_conversations\\hinglish_conversations.csv",
+     "origin_path": "hinglish_conversations.csv",
+     "sha256": "3ec4aa4f23394dc7e6ecef990453641fa85c0f03175ad60f1408e3b3c0c36484"
+    }
+   ],
+   "license": "mit",
+   "name": "hinglish_everyday_conversations",
+   "notes": "",
+   "path": "hinglish_everyday_conversations/",
+   "revision": "cf040b1b80857c6038eb73ddad441f0b435e02a6",
+   "role": "hinglish_latin",
+   "sample_fraction": 0.03,
+   "url": "https://huggingface.co/datasets/Abhishekcr448/Hinglish-Everyday-Conversations-1M"
+  }
+ ]
+}

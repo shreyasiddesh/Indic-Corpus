@@ -1,0 +1,13 @@
+[indic_corpus] 3 input files (5 ignored)
+[indic_corpus] S1 hinglish_everyday_conversations/hinglish_conversations.csv: processing
+[indic_corpus] S1 sangraha_verified_hin/verified__hin__data-0.parquet: processing
+[indic_corpus] S1 wikipedia_hi/20231101.hi__train-00000-of-00002.parquet: processing
+[indic_corpus] S2 dedup
+[indic_corpus] S2: 88 eval candidates excluded (member of a near-duplicate template family)
+[indic_corpus] S2: 9419 duplicates, 200 eval items
+[indic_corpus] S3 contamination + write
+[indic_corpus] done: 86771 kept / 1257633 input docs
+
+real	8m42.930s
+user	0m0.061s
+sys	0m0.092s
